@@ -55,8 +55,6 @@ public class MainActivity extends AppCompatActivity {
     String topic = "Chatting";
     String tpc = "/topics/"+topic;
     DatabaseReference dbref;
-    //token Mi A1 = cy0iEV_fRgKCNgkNlAZsAx:APA91bFv_5DXe4Q7f3ikGEAIMFdfQpwqitkvMC16VwMMMGl9T_Qt8zm4C5qCzWnWZaxuaOvjnKAc5iHBHDlHBy6USF4U4mRafl9GZqGacrgBdmJqos-UDvQkBBsE8QgOIoBuLzd5yFfH
-    //token emu = ca5QWvFzSfuxdbLXs-yCdW:APA91bGnh6iZvESjidKecY_wNryOf4slxJ_JhkD7qacYCVx0otYs-nP_Qiwr-CCg-l3PZX53DEfEpqFC0q6eNaHM0eehtpgaOhbCH6jcOCvAVfThUfQKgPaNQsl7ZSirhjKq_H0BAZM4
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

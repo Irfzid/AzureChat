@@ -52,11 +52,11 @@ public class AzureAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view;
         switch (viewType){
-            case 1:
+            case 0:
                 view = LayoutInflater.from(parent.getContext()).inflate(R.layout.message, parent, false);
                 return new ViewHolder1(view);
             
-            case 0:
+            case 1:
                 view = LayoutInflater.from(parent.getContext()).inflate(R.layout.message2, parent, false);
                 return new ViewHolder2(view);
         }return null;
@@ -66,13 +66,13 @@ public class AzureAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
 
         switch (holder.getItemViewType()){
-            case 1:
+            case 0:
                 ViewHolder1 viewHolder1 = (ViewHolder1) holder;
                 viewHolder1.getTvmessage().setText(readlist.get(position).getMsg());
                 break;
 
 
-            case 0:
+            case 1:
                 ViewHolder2 viewHolder2 = (ViewHolder2) holder;
                 viewHolder2.getTvmessage2().setText(readlist.get(position).getMsg());
                 break;
@@ -92,10 +92,10 @@ public class AzureAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
         if(readlist.get(position).getFrom().equals(token))
         {
-            p = 0;
+            p = 1;
         }
         else {
-            p = 1;
+            p = 0;
         }
         return p;
     }

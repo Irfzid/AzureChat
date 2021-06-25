@@ -23,10 +23,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     private static final String TAG = "MyFirebaseMsgService";
     private DatabaseReference databaseReference;
-    public static final String CHANNEL_ID = "TestChannel";
-    public static final int NOTIFICATION_ID = 888888;
-    private String temp_key;
-    private RemoteMessage remoteMessage;
+
 
     @Override
     public void onMessageReceived(@NonNull RemoteMessage remoteMessage) {
@@ -35,7 +32,6 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
         if (remoteMessage.getData().size() > 0) {
 
-            //addNotification(remoteMessage);
 
             Map<String,String> temp = remoteMessage.getData();
 
@@ -81,24 +77,6 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
 
     }
-
-//    private void addNotification(RemoteMessage remoteMessage) {
-//        //createNotificationChannel();
-//        NotificationCompat.Builder builder =
-//                new NotificationCompat.Builder(this, CHANNEL_ID)
-//                        .setSmallIcon(R.mipmap.ic_launcher_round)
-//                        .setContentTitle("NOTIFICATION EXAMPLE")
-//                        .setContentText(remoteMessage.getData().get("msg"));
-//
-//        Intent notificationIntent = new Intent(this, MainActivity.class);
-//        PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent,
-//                PendingIntent.FLAG_UPDATE_CURRENT);
-//        builder.setContentIntent(contentIntent);
-//
-//        // Add as notification
-//        NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-//        manager.notify(NOTIFICATION_ID, builder.build());
-//    }
 
 
 
