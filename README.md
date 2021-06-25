@@ -9,7 +9,7 @@ Maldini Abdillah (1313617007)
 
 # Fitur
 
-Pada aplikasi ini, penggunha bisa saling berkirim pesan layaknya aplikasi berpesan pada umumnya
+Pada aplikasi ini, pengguna bisa saling berkirim pesan layaknya aplikasi berpesan pada umumnya
 
 
  
