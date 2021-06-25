@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "511536621379",
+    "project_id": "azurechat-68083",
+    "storage_bucket": "azurechat-68083.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:511536621379:android:bb300e333edcde9275f1f6",
+        "android_client_info": {
+          "package_name": "com.zidney.azurechat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "511536621379-cfofo0j196v4jndslgj6a57ceo0gpg98.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAlH8djuefEtTqSR4PPUJV3BJ9gQzdlfA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "511536621379-cfofo0j196v4jndslgj6a57ceo0gpg98.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

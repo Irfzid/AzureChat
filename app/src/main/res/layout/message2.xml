@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/dark_azure"
+        app:contentPadding="15dp"
+        android:layout_margin="5dp"
+        app:cardCornerRadius="8dp"
+        android:layout_gravity="right">
+
+        <TextView
+            android:id="@+id/tv_msg2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:text="ini pesan"/>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</LinearLayout>
