@@ -161,44 +161,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-//         dbref.child("Chatchat").child("room1").addChildEventListener(new ChildEventListener() {
-//
-//            @Override
-//            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable  String previousChildName) {
-//
-//
-//
-//
-//
-//                Log.d(TAG, "onChildAdded: "+ snapshot.getValue());
-//
-//            }
-//
-//            @Override
-//            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable  String previousChildName) {
-//
-//            }
-//
-//            @Override
-//            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-//
-//            }
-//
-//            @Override
-//            public void onChildMoved(@NonNull  DataSnapshot snapshot, @Nullable  String previousChildName) {
-//
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull  DatabaseError error) {
-//
-//            }
-//        });
-
-
-
-
     }
 
 
@@ -233,10 +195,6 @@ public class MainActivity extends AppCompatActivity {
                     Log.d(TAG, "onResponse: failed to respon" + response.message());
                     return;
                 }
-
-//                root.add(rootModel);
-//                azureAdapter = new AzureAdapter(root, token);
-//                recyclerView.setAdapter(azureAdapter);
 
                 Log.d(TAG,"Successfully notification send by using retrofit."+response.code());
             }

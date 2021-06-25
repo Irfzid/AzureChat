@@ -35,14 +35,14 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
         if (remoteMessage.getData().size() > 0) {
 
-            addNotification(remoteMessage);
+            //addNotification(remoteMessage);
 
             Map<String,String> temp = remoteMessage.getData();
 
             SendNotiftoDatabase(temp);
-            Log.d(TAG, "onMessageReceived: "+temp);
-
-            Log.d(TAG, "Message data payload: " + remoteMessage.getData());
+//            Log.d(TAG, "onMessageReceived: "+temp);
+//
+//            Log.d(TAG, "Message data payload: " + remoteMessage.getData());
         }
 
         if (remoteMessage.getNotification() != null) {
@@ -82,23 +82,23 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     }
 
-    private void addNotification(RemoteMessage remoteMessage) {
-        //createNotificationChannel();
-        NotificationCompat.Builder builder =
-                new NotificationCompat.Builder(this, CHANNEL_ID)
-                        .setSmallIcon(R.mipmap.ic_launcher_round)
-                        .setContentTitle("NOTIFICATION EXAMPLE")
-                        .setContentText(remoteMessage.getData().get("msg"));
-
-        Intent notificationIntent = new Intent(this, MainActivity.class);
-        PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent,
-                PendingIntent.FLAG_UPDATE_CURRENT);
-        builder.setContentIntent(contentIntent);
-
-        // Add as notification
-        NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        manager.notify(NOTIFICATION_ID, builder.build());
-    }
+//    private void addNotification(RemoteMessage remoteMessage) {
+//        //createNotificationChannel();
+//        NotificationCompat.Builder builder =
+//                new NotificationCompat.Builder(this, CHANNEL_ID)
+//                        .setSmallIcon(R.mipmap.ic_launcher_round)
+//                        .setContentTitle("NOTIFICATION EXAMPLE")
+//                        .setContentText(remoteMessage.getData().get("msg"));
+//
+//        Intent notificationIntent = new Intent(this, MainActivity.class);
+//        PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent,
+//                PendingIntent.FLAG_UPDATE_CURRENT);
+//        builder.setContentIntent(contentIntent);
+//
+//        // Add as notification
+//        NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+//        manager.notify(NOTIFICATION_ID, builder.build());
+//    }
 
 
 
