@@ -11,10 +11,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.zidney.azurechat.model.Read;
 import com.zidney.azurechat.model.RootModel;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class AzureAdapter extends RecyclerView.Adapter<AzureAdapter.ViewHolder> {
+public class AzureAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     ArrayList<Read> readlist = new ArrayList<>();
     String token;
@@ -26,29 +28,56 @@ public class AzureAdapter extends RecyclerView.Adapter<AzureAdapter.ViewHolder> 
 
     public class ViewHolder1 extends RecyclerView.ViewHolder {
 
-        private TextView test;
+        private TextView tvmessage;
         public ViewHolder1(@NonNull View itemView) {
             super(itemView);
+
+            tvmessage = itemView.findViewById(R.id.tv_msg);
         }
+        public TextView getTvmessage() {return tvmessage;}
+    }
+
+    public class ViewHolder2 extends RecyclerView.ViewHolder {
+
+        private TextView tvmessage2;
+        public ViewHolder2(@NonNull View itemView) {
+            super(itemView);
+
+            tvmessage2 = itemView.findViewById(R.id.tv_msg2);
+        }
+        public TextView getTvmessage2() { return tvmessage2;}
     }
 
     @Override
-    public AzureAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view;
-
-        if(readlist.get(viewType).equals(token))
-        {
-            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.message, parent, false);
-        }
-        else {
-            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.message2, parent, false);
-        }
-        return new ViewHolder(view);
+        switch (viewType){
+            case 1:
+                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.message, parent, false);
+                return new ViewHolder1(view);
+            
+            case 0:
+                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.message2, parent, false);
+                return new ViewHolder2(view);
+        }return null;
     }
 
     @Override
-    public void onBindViewHolder(AzureAdapter.ViewHolder holder, int position) {
-        holder.tv_msg.setText(readlist.get(position).getMsg());
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+        //holder.tv_msg.setText(readlist.get(position).getMsg());
+
+        switch (holder.getItemViewType()){
+            case 1:
+                ViewHolder1 viewHolder1 = (ViewHolder1) holder;
+                viewHolder1.getTvmessage().setText(readlist.get(position).getMsg());
+                break;
+
+
+            case 0:
+                ViewHolder2 viewHolder2 = (ViewHolder2) holder;
+                viewHolder2.getTvmessage2().setText(readlist.get(position).getMsg());
+                break;
+        }
 
     }
 
@@ -59,25 +88,28 @@ public class AzureAdapter extends RecyclerView.Adapter<AzureAdapter.ViewHolder> 
 
 
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-
-        public TextView tv_msg, tv_msg2;
-
-        public ViewHolder(View itemView) {
-            super(itemView);
-            tv_msg = itemView.findViewById(R.id.tv_msg);
-            tv_msg2 = itemView.findViewById(R.id.tv_msg2);
-        }
-    }
-
-//    @Override
-//    public int getItemViewType(int position) {
+//    public class ViewHolder extends RecyclerView.ViewHolder {
 //
-//        if (readlist.get(position).equals(token))
-//        {
+//        public TextView tv_msg, tv_msg2;
 //
+//        public ViewHolder(View itemView) {
+//            super(itemView);
+//            tv_msg = itemView.findViewById(R.id.tv_msg);
+//            tv_msg2 = itemView.findViewById(R.id.tv_msg2);
 //        }
-//
-//        return super.getItemViewType(position);
 //    }
+
+    @Override
+    public int getItemViewType(int position) {
+        int p;
+
+        if(readlist.get(position).getFrom().equals(token))
+        {
+            p = 0;
+        }
+        else {
+            p = 1;
+        }
+        return p;
+    }
 }
