@@ -64,7 +64,6 @@ public class AzureAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        //holder.tv_msg.setText(readlist.get(position).getMsg());
 
         switch (holder.getItemViewType()){
             case 1:
@@ -86,18 +85,6 @@ public class AzureAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         return readlist.size();
     }
 
-
-
-//    public class ViewHolder extends RecyclerView.ViewHolder {
-//
-//        public TextView tv_msg, tv_msg2;
-//
-//        public ViewHolder(View itemView) {
-//            super(itemView);
-//            tv_msg = itemView.findViewById(R.id.tv_msg);
-//            tv_msg2 = itemView.findViewById(R.id.tv_msg2);
-//        }
-//    }
 
     @Override
     public int getItemViewType(int position) {
