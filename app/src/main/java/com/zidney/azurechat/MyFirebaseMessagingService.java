@@ -67,7 +67,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
         databaseReference = FirebaseDatabase.getInstance("https://azurechat-68083-default-rtdb.asia-southeast1.firebasedatabase.app").getReference();
 
-        databaseReference.child("Chatchat").child("room1").push().setValue(data).addOnSuccessListener(new OnSuccessListener<Void>() {
+        databaseReference.child("Chatting").child("room1").push().setValue(data).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
                 Log.d(TAG, "onSuccess: Data added to server ");

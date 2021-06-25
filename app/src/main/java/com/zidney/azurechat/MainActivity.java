@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
     private AzureAdapter azureAdapter;
     ArrayList<RootModel> root = new ArrayList<>();
     ArrayList<Read> read = new ArrayList<>();
-    String topic = "Chatchat";
+    String topic = "Chatting";
     String tpc = "/topics/"+topic;
     DatabaseReference dbref;
     //token Mi A1 = cy0iEV_fRgKCNgkNlAZsAx:APA91bFv_5DXe4Q7f3ikGEAIMFdfQpwqitkvMC16VwMMMGl9T_Qt8zm4C5qCzWnWZaxuaOvjnKAc5iHBHDlHBy6USF4U4mRafl9GZqGacrgBdmJqos-UDvQkBBsE8QgOIoBuLzd5yFfH
@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void getMessagefromDB() {
 
-        Query query = dbref.child("Chatchat").child("room1");
+        Query query = dbref.child(topic).child("room1");
 
         query.addChildEventListener(new ChildEventListener() {
             @Override
