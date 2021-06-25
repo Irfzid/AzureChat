@@ -1,6 +1,6 @@
 # AzureChat
 
-Ini merupakan tugas 3 dalam mata kuliah mobile computing 114
+Ini merupakan tugas 3 dalam mata kuliah mobile computing 114. Pada aplikasi ini memiliki kemampuan untuk mengubah notifikasi dari FCM(Firebase Cloud Messaging) menjadi pesan seperti pada aplikasi messaging.
 
 # Anggota Kelompok
 
